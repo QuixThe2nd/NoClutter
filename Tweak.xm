@@ -65,8 +65,7 @@
 		[self.text containsString:@"Sprint"] ||
 		[self.text containsString:@"Return Carefully"]){
 		self.hidden = sbcellulartext_hide;
-		if(!hidesbtime)
-			hidesbtime = YES;
+		hidesbtime = YES;
 	}
 
 	if(!hidesbtime){
