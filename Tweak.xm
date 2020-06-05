@@ -49,7 +49,7 @@
 	%orig;
 	if([self.text containsString:@"LTE"] || [self.text containsString:@"5G"] || [self.text containsString:@"5Ge"] || [self.text containsString:@"4G"] || [self.text containsString:@"3G"] || [self.text containsString:@"SOS"]){
 		self.hidden = sbcellular_hide;
-		BOOL hidesbtime = YES;
+		hidesbtime = YES;
 	}
 
 	if([self.text containsString:@"Optus"] || 
@@ -66,7 +66,7 @@
 		[self.text containsString:@"Return Carefully"]){
 		self.hidden = sbcellulartext_hide;
 		if(!hidesbtime)
-			BOOL hidesbtime = YES;
+			hidesbtime = YES;
 	}
 
 	if(!hidesbtime){
