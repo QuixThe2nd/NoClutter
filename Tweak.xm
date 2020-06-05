@@ -15,7 +15,7 @@
 %hook CSTeachableMomentsContainerView
 -(void)didMoveToWindow{
 	%orig;
-	if(ccbar_hide){
+	if(ccbar_hide && self.controlCenterGrabberContainerView){
 		self.controlCenterGrabberContainerView.hidden = YES;
 	}
 }
@@ -47,8 +47,9 @@
 %hook _UIStatusBarStringView
 -(void)didMoveToWindow{
 	%orig;
-	if([self.text containsString:@"LTE"] || [self.text containsString:@"5G"] || [self.text containsString:@"4G"] || [self.text containsString:@"3G"] || [self.text containsString:@"SOS"]){
+	if([self.text containsString:@"LTE"] || [self.text containsString:@"5G"] || [self.text containsString:@"5Ge"] || [self.text containsString:@"4G"] || [self.text containsString:@"3G"] || [self.text containsString:@"SOS"]){
 		self.hidden = sbcellular_hide;
+		static BOOL hidesbtime = YES;
 	}
 
 	if([self.text containsString:@"Optus"] || 
@@ -61,11 +62,14 @@
 		[self.text containsString:@"StaySafe Orange B"] ||
 		[self.text containsString:@"StayHome"] ||
 		[self.text containsString:@"#StayHome"] ||
-		[self.text containsString:@"Sprint"]){
+		[self.text containsString:@"Sprint"] ||
+		[self.text containsString:@"Return Carefully"]){
 		self.hidden = sbcellulartext_hide;
+		if(!time)
+			static BOOL hidesbtime = YES;
 	}
 
-	if{
+	if(!time){
 		self.hidden = sbtime_hide;
 	}
 }
@@ -121,17 +125,19 @@
 
 // NoHomeBar
 %hook MTLumaDodgePillSettings
-- (void)setHeight:(double)arg1{
-    if (homebar_hide){
-        arg1 = 0;
-    }
-    %orig;
+-(void)setHeight:(double)arg1{
+	if(homebar_hide){
+    	%orig(0);
+    	return;
+	}
+	%orig;
 }
-- (void)setMinWidth:(double)arg1{
-    if (homebar_hide){
-        arg1 = 0;
-    }
-    %orig;
+-(void)setMinWidth:(double)arg1{
+	if(homebar_hide){
+    	%orig(0);
+    	return;
+	}
+	%orig;
 }
 %end
 
@@ -139,7 +145,9 @@
 %hook SBDockView
 -(void)didMoveToWindow{
 	%orig;
-	self.subviews[0].hidden = dockbackground_hide;
+	if([self.subviews length] > 0 && dockbackground_hide){
+    	self.subviews[0].hidden = YES;
+	}
 }
 %end
 
@@ -324,10 +332,8 @@
 // NoDNDBanner
 %hook DNDNotificationsService
 -(void)_queue_postOrRemoveNotificationWithUpdatedBehavior:(BOOL)arg1 significantTimeChange:(BOOL)arg2{
-	if(dnd_hide)
-		return;
-	else
-		%orig;
+	if (dnd_hide) return;
+	%orig;
 }
 %end
 
