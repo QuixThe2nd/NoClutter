@@ -49,7 +49,7 @@
 	%orig;
 	if([self.text containsString:@"LTE"] || [self.text containsString:@"5G"] || [self.text containsString:@"5Ge"] || [self.text containsString:@"4G"] || [self.text containsString:@"3G"] || [self.text containsString:@"SOS"]){
 		self.hidden = sbcellular_hide;
-		static BOOL hidesbtime = YES;
+		BOOL hidesbtime = YES;
 	}
 
 	if([self.text containsString:@"Optus"] || 
@@ -66,7 +66,7 @@
 		[self.text containsString:@"Return Carefully"]){
 		self.hidden = sbcellulartext_hide;
 		if(!hidesbtime)
-			static BOOL hidesbtime = YES;
+			BOOL hidesbtime = YES;
 	}
 
 	if(!hidesbtime){
@@ -145,7 +145,7 @@
 %hook SBDockView
 -(void)didMoveToWindow{
 	%orig;
-	if([self.subviews length] > 0 && dockbackground_hide){
+	if([self.subviews count] > 0 && dockbackground_hide){
     	self.subviews[0].hidden = YES;
 	}
 }
