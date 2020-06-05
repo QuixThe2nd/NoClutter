@@ -1,6 +1,7 @@
 ARCHS = arm64 arm64e
 INSTALL_TARGET_PROCESSES = SpringBoard
 NoClutter_EXTRA_FRAMEWORKS += Cephei
+NoClutter_CFLAGS = -fobjc-arc
 
 include $(THEOS)/makefiles/common.mk
 

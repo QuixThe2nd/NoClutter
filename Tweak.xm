@@ -421,7 +421,6 @@ static void loadPrefs(){
 		updatedots_hide = ([prefs objectForKey:@"updatedots_hide" ] ? [[prefs objectForKey:@"updatedots_hide"] boolValue] : updatedots_hide);
 		sbcellulartext_hide = ([prefs objectForKey:@"sbcellulartext_hide" ] ? [[prefs objectForKey:@"sbcellulartext_hide"] boolValue] : sbcellulartext_hide);
 	}
-    [prefs release];
 }
 
 %ctor{
