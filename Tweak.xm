@@ -5,7 +5,9 @@
 %hook BSUICAPackageView
 -(void)didMoveToWindow{
 	%orig;
-	self.hidden = padlock_hide;
+	if(padlock_hide){
+		self.hidden = YES;
+	}
 }
 %end
 
@@ -23,7 +25,9 @@
 %hook _UIScrollViewScrollIndicator
 -(void)didMoveToWindow{
 	%orig;
-	self.hidden = scrollbar_hide;
+	if(scrollbar_hide){
+		self.hidden = YES;
+	}
 }
 %end
 
@@ -31,18 +35,37 @@
 %hook SBDockView
 -(void)layoutSubviews{
 	%orig;
-	self.hidden = dock_hide;
+	if(dock_hide){
+		self.hidden = YES;
+	}
 }
 %end
 
 // NoSBTime
 // NoSBCellular
+// NoSBCellularText
 %hook _UIStatusBarStringView
 -(void)didMoveToWindow{
 	%orig;
 	if([self.text containsString:@"LTE"] || [self.text containsString:@"5G"] || [self.text containsString:@"4G"] || [self.text containsString:@"3G"] || [self.text containsString:@"SOS"]){
 		self.hidden = sbcellular_hide;
-	}else{
+	}
+
+	if([self.text containsString:@"Optus"] || 
+		[self.text containsString:@"Telstra"] ||
+		[self.text containsString:@"Verizon"] ||
+		[self.text containsString:@"AT&T"] ||
+		[self.text containsString:@"T-Mobile"] ||
+		[self.text containsString:@"VIVACOM"] ||
+		[self.text containsString:@"vodafone UK"] ||
+		[self.text containsString:@"StaySafe Orange B"] ||
+		[self.text containsString:@"StayHome"] ||
+		[self.text containsString:@"#StayHome"] ||
+		[self.text containsString:@"Sprint"]){
+		self.hidden = sbcellulartext_hide;
+	}
+
+	if{
 		self.hidden = sbtime_hide;
 	}
 }
@@ -390,6 +413,7 @@ static void loadPrefs(){
 		tablabel_hide = ([prefs objectForKey:@"tablabel_hide"] ? [[prefs objectForKey:@"tablabel_hide"] boolValue] : tablabel_hide);
 		betadots_hide = ([prefs objectForKey:@"betadots_hide" ] ? [[prefs objectForKey:@"betadots_hide"] boolValue] : betadots_hide);
 		updatedots_hide = ([prefs objectForKey:@"updatedots_hide" ] ? [[prefs objectForKey:@"updatedots_hide"] boolValue] : updatedots_hide);
+		sbcellulartext_hide = ([prefs objectForKey:@"sbcellulartext_hide" ] ? [[prefs objectForKey:@"sbcellulartext_hide"] boolValue] : sbcellulartext_hide);
 	}
     [prefs release];
 }
