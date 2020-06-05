@@ -7,7 +7,7 @@ include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = NoClutter
 NoClutter_FILES = Tweak.xm
-export TARGET = iphone:clang:10.3:7.0
+export TARGET = iphone:clang:13.0:7.0
 
 include $(THEOS_MAKE_PATH)/tweak.mk
 
