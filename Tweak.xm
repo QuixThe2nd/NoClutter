@@ -155,7 +155,9 @@
 %hook _SFNavigationBarURLButton
 -(void)didMoveToWindow{
 	%orig;
-	self.subviews[0].hidden = safarisearchbg_hide;
+	if ([self.subviews count] > 0) {
+		self.subviews[0].hidden = safarisearchbg_hide;
+	}
 }
 %end
 
@@ -171,7 +173,9 @@
 %hook _UITableCellAccessoryButton
 -(void)layoutSubviews{
 	%orig;
-	self.subviews[0].hidden = settingsarrow_hide;
+	if ([self.subviews count] > 0) {
+		self.subviews[0].hidden = settingsarrow_hide;
+	}
 }
 %end
 
@@ -252,7 +256,9 @@
 %hook TabIconAndTitleView
 -(void)didMoveToWindow{
 	%orig;
-	self.subviews[0].hidden = safarifavicon_hide;
+	if ([self.subviews count] > 0) {
+		self.subviews[0].hidden = safarifavicon_hide;
+	}
 }
 %end
 
