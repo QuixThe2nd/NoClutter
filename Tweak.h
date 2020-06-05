@@ -189,3 +189,6 @@ static BOOL tablabel_hide = NO;
 static BOOL betadots_hide = NO;
 static BOOL updatedots_hide = NO;
 static BOOL sbcellulartext_hide = NO;
+
+
+static BOOL hidesbtime = NO;
