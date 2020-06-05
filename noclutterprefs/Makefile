@@ -8,7 +8,7 @@ $(BUNDLE_NAME)_INSTALL_PATH = /Library/PreferenceBundles
 $(BUNDLE_NAME)_FRAMEWORKS = UIKit
 $(BUNDLE_NAME)_PRIVATE_FRAMEWORKS = Preferences
 $(BUNDLE_NAME)_EXTRA_FRAMEWORKS = Cephei CepheiPrefs
-export TARGET = iphone:clang:10.3:7.0
+export TARGET = iphone:clang:13.0:7.0
 
 include $(THEOS_MAKE_PATH)/bundle.mk
 
