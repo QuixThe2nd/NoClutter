@@ -69,7 +69,7 @@
 			static BOOL hidesbtime = YES;
 	}
 
-	if(!time){
+	if(!hidesbtime){
 		self.hidden = sbtime_hide;
 	}
 }
