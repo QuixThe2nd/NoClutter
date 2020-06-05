@@ -5,19 +5,24 @@
 %hook BSUICAPackageView
 -(void)didMoveToWindow{
 	%orig;
-	if(padlock_hide){
+	if(padlock_hide)
 		self.hidden = YES;
-	}
 }
 %end
 
 // NoCCBar
+// NoSwipeText
 %hook CSTeachableMomentsContainerView
 -(void)didMoveToWindow{
 	%orig;
-	if(ccbar_hide && self.controlCenterGrabberContainerView){
+	if(ccbar_hide && self.controlCenterGrabberContainerView)
 		self.controlCenterGrabberContainerView.hidden = YES;
-	}
+}
+-(void)_layoutCallToActionLabel{
+	%orig;
+	SBUILegibilityLabel* label = MSHookIvar<SBUILegibilityLabel *>(self, "_callToActionLabel");
+	if(swipetext_hide)
+		label.hidden = YES;
 }
 %end
 
@@ -25,9 +30,8 @@
 %hook _UIScrollViewScrollIndicator
 -(void)didMoveToWindow{
 	%orig;
-	if(scrollbar_hide){
+	if(scrollbar_hide)
 		self.hidden = YES;
-	}
 }
 %end
 
@@ -35,9 +39,8 @@
 %hook SBDockView
 -(void)layoutSubviews{
 	%orig;
-	if(dock_hide){
+	if(dock_hide)
 		self.hidden = YES;
-	}
 }
 %end
 
@@ -48,8 +51,10 @@
 -(void)didMoveToWindow{
 	%orig;
 	if([self.text containsString:@"LTE"] || [self.text containsString:@"5G"] || [self.text containsString:@"5Ge"] || [self.text containsString:@"4G"] || [self.text containsString:@"3G"] || [self.text containsString:@"SOS"]){
-		self.hidden = sbcellular_hide;
-		hidesbtime = YES;
+		if(sbcellular_hide){
+			self.hidden = YES;
+			hidesbtime = YES;
+		}
 	}
 
 	if([self.text containsString:@"Optus"] || 
@@ -58,19 +63,20 @@
 		[self.text containsString:@"AT&T"] ||
 		[self.text containsString:@"T-Mobile"] ||
 		[self.text containsString:@"VIVACOM"] ||
+		[self.text containsString:@"TELIA"] ||
 		[self.text containsString:@"vodafone UK"] ||
 		[self.text containsString:@"StaySafe Orange B"] ||
 		[self.text containsString:@"StayHome"] ||
 		[self.text containsString:@"#StayHome"] ||
 		[self.text containsString:@"Sprint"] ||
-		[self.text containsString:@"Return Carefully"]){
-		self.hidden = sbcellulartext_hide;
-		hidesbtime = YES;
+		[self.text containsString:@"Return Carefully"] ||
+		[self.text containsString:@"Digicell"]){
+			self.hidden = sbcellulartext_hide;
+			hidesbtime = YES;
 	}
 
-	if(!hidesbtime){
+	if(!hidesbtime)
 		self.hidden = sbtime_hide;
-	}
 }
 %end
 
@@ -78,9 +84,8 @@
 %hook _UIStatusBarCellularSignalView
 -(void)didMoveToWindow{
 	%orig;
-	if(sbsignal_hide){
+	if(sbsignal_hide)
 		self.hidden = YES;
-	}
 }
 %end
 
@@ -88,9 +93,8 @@
 %hook _UIStatusBarWifiSignalView
 -(void)didMoveToWindow{
 	%orig;
-	if(sbwifi_hide){
+	if(sbwifi_hide)
 		self.hidden = YES;
-	}
 }
 %end
 
@@ -98,9 +102,15 @@
 %hook _UIBatteryView
 -(void)didMoveToWindow{
 	%orig;
-	if(sbbattery_hide){
+	if(sbbattery_hide)
 		self.hidden = YES;
-	}
+}
+%end
+%hook SparkBatteryView
+-(void)didMoveToWindow{
+	%orig;
+	if(sbbattery_hide)
+		self.hidden = YES;
 }
 %end
 
@@ -108,7 +118,8 @@
 %hook CSQuickActionsView
 -(void)didMoveToWindow{
 	%orig;
-	self.hidden = quickactiontoggles_hide;
+	if(quickactiontoggles_hide)
+		self.hidden = YES;
 }
 %end
 
@@ -116,9 +127,8 @@
 %hook NCNotificationListHeaderTitleView
 -(void)didMoveToWindow{
 	%orig;
-	if(notificationcentertext_hide){
+	if(notificationcentertext_hide)
 		self.hidden = YES;
-	}
 }
 %end
 
@@ -144,9 +154,8 @@
 %hook SBDockView
 -(void)didMoveToWindow{
 	%orig;
-	if([self.subviews count] > 0 && dockbackground_hide){
+	if([self.subviews count] > 0 && dockbackground_hide)
     	self.subviews[0].hidden = YES;
-	}
 }
 %end
 
@@ -154,9 +163,8 @@
 %hook _SFNavigationBarURLButton
 -(void)didMoveToWindow{
 	%orig;
-	if ([self.subviews count] > 0) {
-		self.subviews[0].hidden = safarisearchbg_hide;
-	}
+	if([self.subviews count] > 0 && safarisearchbg_hide)
+		self.subviews[0].hidden = YES;
 }
 %end
 
@@ -164,7 +172,8 @@
 %hook _SFDimmingButton
 -(void)didMoveToWindow{
 	%orig;
-	self.hidden = safariclosetabbutton_hide;
+	if(safariclosetabbutton_hide)
+		self.hidden = YES;
 }
 %end
 
@@ -172,9 +181,8 @@
 %hook _UITableCellAccessoryButton
 -(void)layoutSubviews{
 	%orig;
-	if ([self.subviews count] > 0) {
-		self.subviews[0].hidden = settingsarrow_hide;
-	}
+	if([self.subviews count] > 0 && settingsarrow_hide)
+		self.subviews[0].hidden = YES;
 }
 %end
 
@@ -189,7 +197,8 @@
 %hook SBFluidSwitcherItemContainerHeaderView
 -(void)didMoveToWindow{
 	%orig;
-	self.hidden = appswitcherheader_hide;
+	if(appswitcherheader_hide)
+		self.hidden = YES;
 }
 %end
 
@@ -197,7 +206,8 @@
 %hook SBFluidSwitcherIconImageContainerView
 -(void)didMoveToWindow{
 	%orig;
-	self.hidden = appswitchericons_hide;
+	if(appswitchericons_hide)
+		self.hidden = YES;
 }
 %end
 
@@ -205,7 +215,8 @@
 %hook CCUIStatusBar
 -(void)didMoveToWindow{
 	%orig;
-	self.hidden = ccstatusbar_hide;
+	if(ccstatusbar_hide)
+		self.hidden = YES;
 }
 %end
 
@@ -213,7 +224,8 @@
 %hook SBFolderTitleTextField
 -(void)didMoveToWindow{
 	%orig;
-	self.hidden = foldertitle_hide;
+	if(foldertitle_hide)
+		self.hidden = YES;
 }
 %end
 
@@ -221,7 +233,8 @@
 %hook SBFolderBackgroundView
 -(void)didMoveToWindow{
 	%orig;
-	self.hidden = folderbackground_hide;
+	if(folderbackground_hide)
+		self.hidden = YES;
 }
 %end
 
@@ -229,7 +242,8 @@
 %hook SBFolderControllerBackgroundView
 -(void)didMoveToWindow{
 	%orig;
-	self.hidden = folderblur_hide;
+	if(folderblur_hide)
+		self.hidden = YES;
 }
 %end
 
@@ -237,9 +251,8 @@
 %hook SBIconBadgeView
 -(void)didMoveToWindow{
 	%orig;
-	if(iconbadge_hide){
+	if(iconbadge_hide)
 		self.hidden = YES;
-	}
 }
 %end
 
@@ -247,7 +260,8 @@
 %hook SBHEditingDoneButton
 -(void)didMoveToWindow{
 	%orig;
-	self.hidden = editingdonebutton_hide;
+	if(editingdonebutton_hide)
+		self.hidden = YES;
 }
 %end
 
@@ -255,9 +269,8 @@
 %hook TabIconAndTitleView
 -(void)didMoveToWindow{
 	%orig;
-	if ([self.subviews count] > 0) {
+	if([self.subviews count] > 0)
 		self.subviews[0].hidden = safarifavicon_hide;
-	}
 }
 %end
 
@@ -265,7 +278,8 @@
 %hook SBXCloseBoxView
 -(void)didMoveToWindow{
 	%orig;
-	self.hidden = xdeletebutton_hide;
+	if(xdeletebutton_hide)
+		self.hidden = YES;
 }
 %end
 
@@ -273,13 +287,15 @@
 %hook _UIInterfaceActionVibrantSeparatorView
 -(void)didMoveToWindow{
 	%orig;
-	self.hidden = separator_hide;
+	if(separator_hide)
+		self.hidden = YES;
 }
 %end
 %hook _UITableViewCellSeparatorView
 -(void)didMoveToWindow{
 	%orig;
-	self.hidden = separator_hide;
+	if(separator_hide)
+		self.hidden = YES;
 }
 %end
 
@@ -287,7 +303,8 @@
 %hook _UIStatusBarImageView
 -(void)didMoveToWindow{
 	%orig;
-	self.hidden = sbvpn_hide;
+	if(sbvpn_hide)
+		self.hidden = YES;
 }
 %end
 
@@ -295,7 +312,8 @@
 %hook _UIStatusBar
 -(void)didMoveToWindow{
 	%orig;
-	self.hidden = statusbar_hide;
+	if(statusbar_hide)
+		self.hidden = YES;
 }
 %end
 
@@ -303,7 +321,8 @@
 %hook WGWidgetListFooterView
 -(void)didMoveToWindow{
 	%orig;
-	self.hidden = widgetfooter_hide;
+	if(widgetfooter_hide)
+		self.hidden = YES;
 }
 %end
 
@@ -311,7 +330,8 @@
 %hook _UIStatusBarPillView
 -(void)didMoveToWindow{
 	%orig;
-	self.hidden = sbpill_hide;
+	if(sbpill_hide)
+		self.hidden = YES;
 }
 %end
 
@@ -320,7 +340,7 @@
 -(void)didMoveToWindow{
 	%orig;
 	SBUILegibilityLabel* label = MSHookIvar<SBUILegibilityLabel *>(self, "_revealHintTitle");
-	if (nooldernotifications_hide)
+	if(nooldernotifications_hide)
 		label.hidden = YES;
 }
 %end
@@ -337,7 +357,7 @@
 // NoDNDBanner
 %hook DNDNotificationsService
 -(void)_queue_postOrRemoveNotificationWithUpdatedBehavior:(BOOL)arg1 significantTimeChange:(BOOL)arg2{
-	if (dnd_hide) return;
+	if(dnd_hide) return;
 	%orig;
 }
 %end
@@ -372,9 +392,8 @@
 // NoPageDots
 %hook SBIconListPageControl
 -(id)initWithFrame:(CGRect)arg1{
-    if(pagedots_hide){
+    if(pagedots_hide)
         return nil;
-	}
 	return %orig;
 }
 %end
@@ -425,14 +444,14 @@ static void loadPrefs(){
 		betadots_hide = ([prefs objectForKey:@"betadots_hide" ] ? [[prefs objectForKey:@"betadots_hide"] boolValue] : betadots_hide);
 		updatedots_hide = ([prefs objectForKey:@"updatedots_hide" ] ? [[prefs objectForKey:@"updatedots_hide"] boolValue] : updatedots_hide);
 		sbcellulartext_hide = ([prefs objectForKey:@"sbcellulartext_hide" ] ? [[prefs objectForKey:@"sbcellulartext_hide"] boolValue] : sbcellulartext_hide);
+		swipetext_hide = ([prefs objectForKey:@"swipetext_hide" ] ? [[prefs objectForKey:@"swipetext_hide"] boolValue] : swipetext_hide);
 	}
 }
 
 %ctor{
     	CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)loadPrefs, CFSTR("com.iamparsa.noclutter/settingschanged"), NULL, CFNotificationSuspensionBehaviorCoalesce);
     	loadPrefs();
-		if(!enabled){
+		if(!enabled)
 			return;
-		}
 		%init(Hooks);
 }

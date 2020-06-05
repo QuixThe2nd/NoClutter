@@ -5,3 +5,6 @@
 - Added 5Ge support to "Hide Cellular" option
 - Stability Improvements
 - Added Arc (Ram optimizer)
+- Optimizations
+- Added option to hide swipe text
+- Added support for hiding Juice and BatteryPercentX

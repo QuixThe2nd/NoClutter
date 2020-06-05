@@ -26,6 +26,10 @@
 @property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
 @end
 
+@interface SparkBatteryView
+@property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
+@end
+
 @interface CSQuickActionsView
 @property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
 @end
@@ -189,6 +193,7 @@ static BOOL tablabel_hide = NO;
 static BOOL betadots_hide = NO;
 static BOOL updatedots_hide = NO;
 static BOOL sbcellulartext_hide = NO;
+static BOOL swipetext_hide = NO;
 
 
 BOOL hidesbtime = NO;

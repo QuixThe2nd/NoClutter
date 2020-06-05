@@ -210,7 +210,7 @@
 			<key>key</key>
 			<string>sbcellulartext_hide</string>
 			<key>label</key>
-			<string>Hide LS Cellular Text (Eg. AT&T)</string>
+			<string>Hide LS Cellular Text (Eg. AT&amp;T)</string>
 			<key>PostNotification</key>
 			<string>com.iamparsa.noclutterprefs/settingschanged</string>
 		</dict>
@@ -260,7 +260,7 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>label</key>
-			<string>Hide cellular text supports Optus, Telstra, Verizon, AT&T, T-Mobile, Sprint, VIVACOM, vodafone UK, StaySafe Orange B, StayHome, #StayHome, Return Carefully. DM me on Twitter (@QuixThe2nd) to get other providers added.</string>
+			<string>Hide cellular text supports Optus, Telstra, Verizon, AT&amp;T, T-Mobile, Sprint, VIVACOM, vodafone UK, Digicell, TELIA, StaySafe Orange B, StayHome, #StayHome, Return Carefully. DM me on Twitter (@QuixThe2nd) to get other providers added.</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -453,6 +453,20 @@
 			<string>ccbar_hide</string>
 			<key>label</key>
 			<string>Hide CC Bar</string>
+			<key>PostNotification</key>
+			<string>com.iamparsa.noclutterprefs/settingschanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.iamparsa.noclutterprefs</string>
+			<key>key</key>
+			<string>swipetext_hide</string>
+			<key>label</key>
+			<string>Hide Swipe Text</string>
 			<key>PostNotification</key>
 			<string>com.iamparsa.noclutterprefs/settingschanged</string>
 		</dict>
