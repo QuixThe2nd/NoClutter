@@ -58,6 +58,7 @@
 	}
 
 	if([self.text containsString:@"Optus"] || 
+		[self.text containsString:@"Optus Wi-Fi Calling"] || 
 		[self.text containsString:@"Telstra"] ||
 		[self.text containsString:@"Verizon"] ||
 		[self.text containsString:@"AT&T"] ||

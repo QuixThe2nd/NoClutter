@@ -260,7 +260,7 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>label</key>
-			<string>Hide cellular text supports Optus, Telstra, Verizon, AT&amp;T, T-Mobile, Sprint, VIVACOM, vodafone UK, Digicell, TELIA, StaySafe Orange B, StayHome, #StayHome, Return Carefully. DM me on Twitter (@QuixThe2nd) to get other providers added.</string>
+			<string>Hide cellular text supports Optus, Optus Wi-Fi Calling, Telstra, Verizon, AT&amp;T, T-Mobile, Sprint, VIVACOM, vodafone UK, Digicell, TELIA, StaySafe Orange B, StayHome, #StayHome, Return Carefully. DM me on Twitter (@QuixThe2nd) to get other providers added.</string>
 		</dict>
 		<dict>
 			<key>cell</key>
