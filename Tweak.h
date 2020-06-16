@@ -1,3 +1,6 @@
+#import <CoreTelephony/CTTelephonyNetworkInfo.h>
+#import <CoreTelephony/CTCarrier.h>
+
 @interface BSUICAPackageView
 @property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
 @end
