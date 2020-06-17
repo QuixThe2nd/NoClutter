@@ -1,5 +1,5 @@
 # NoClutter
-## Unrelease Features
+## Unreleased Changes
 ### Conor's Changes
 - Use - (type) instead of -(type)
 - Replace tabs with spaces for better viewing on GitHub
