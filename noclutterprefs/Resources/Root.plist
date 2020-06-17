@@ -236,9 +236,9 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>sbvpn_hide</string>
+			<string>sbpill_hide</string>
 			<key>label</key>
-			<string>Hide VPN</string>
+			<string>Hide Pill</string>
 			<key>PostNotification</key>
 			<string>com.iamparsa.noclutterprefs/settingschanged</string>
 		</dict>
@@ -250,9 +250,9 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>sbpill_hide</string>
+			<string>sbicons_hide</string>
 			<key>label</key>
-			<string>Hide Pill</string>
+			<string>Hide Icons (e.g VPN/Location)</string>
 			<key>PostNotification</key>
 			<string>com.iamparsa.noclutterprefs/settingschanged</string>
 		</dict>
@@ -260,7 +260,7 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>label</key>
-			<string>Hide cellular text supports Optus, Optus Wi-Fi Calling, Telstra, Verizon, AT&amp;T, T-Mobile, Sprint, VIVACOM, vodafone UK, Digicell, TELIA, StaySafe Orange B, StayHome, #StayHome, Return Carefully. DM me on Twitter (@QuixThe2nd) to get other providers added.</string>
+			<string>Hide cellular text supports certain providers only. DM me on Twitter (@QuixThe2nd) to get other providers added.</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -307,6 +307,20 @@
 			<string>betadots_hide</string>
 			<key>label</key>
 			<string>Hide Beta Dots</string>
+			<key>PostNotification</key>
+			<string>com.iamparsa.noclutterprefs/settingschanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.iamparsa.noclutterprefs</string>
+			<key>key</key>
+			<string>offloadedicon_hide</string>
+			<key>label</key>
+			<string>Hide Offloaded Icon</string>
 			<key>PostNotification</key>
 			<string>com.iamparsa.noclutterprefs/settingschanged</string>
 		</dict>
@@ -391,6 +405,20 @@
 			<string>widgetfooter_hide</string>
 			<key>label</key>
 			<string>Hide Widget Footer</string>
+			<key>PostNotification</key>
+			<string>com.iamparsa.noclutterprefs/settingschanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.iamparsa.noclutterprefs</string>
+			<key>key</key>
+			<string>todayview_hide</string>
+			<key>label</key>
+			<string>Hide Today View</string>
 			<key>PostNotification</key>
 			<string>com.iamparsa.noclutterprefs/settingschanged</string>
 		</dict>
@@ -660,7 +688,7 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>label</key>
-			<string>Other</string>
+			<string>Settings</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -673,6 +701,40 @@
 			<string>settingsarrow_hide</string>
 			<key>label</key>
 			<string>Hide Settings Arrow</string>
+			<key>PostNotification</key>
+			<string>com.iamparsa.noclutterprefs/settingschanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Experimental</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.iamparsa.noclutterprefs</string>
+			<key>key</key>
+			<string>hsbackdrop_hide</string>
+			<key>label</key>
+			<string>Hide Homescreen Backdrop</string>
+			<key>PostNotification</key>
+			<string>com.iamparsa.noclutterprefs/settingschanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.iamparsa.noclutterprefs</string>
+			<key>key</key>
+			<string>applabels_hide</string>
+			<key>label</key>
+			<string>Hide App Labels</string>
 			<key>PostNotification</key>
 			<string>com.iamparsa.noclutterprefs/settingschanged</string>
 		</dict>

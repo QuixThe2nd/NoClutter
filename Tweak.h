@@ -1,3 +1,6 @@
+#import <CoreTelephony/CTTelephonyNetworkInfo.h>
+#import <CoreTelephony/CTCarrier.h>
+
 @interface BSUICAPackageView
 @property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
 @end
@@ -86,10 +89,6 @@
 @property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
 @end
 
-@interface _UIStatusBarImageView
-@property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
-@end
-
 @interface SBFluidSwitcherItemContainerHeaderView
 @property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
 @end
@@ -122,6 +121,38 @@
 @property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
 @end
 
+@interface SBHomeScreenBackdropView
+@property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
+@end
+
+@interface SBIconLegibilityLabelView
+@property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
+@end
+
+@interface _UILegibilityImageView
+@property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
+@end
+
+@interface _UIStatusBarImageView
+@property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
+@end
+
+@interface SBIconCloudLabelAccessoryView
+@property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
+@end
+
+@interface _UIStatusBarStringView : UILabel
+@property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
+@end
+
+@interface WGWidgetWrapperView : UIView
+@property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
+@end
+
+@interface SBSearchBar : UIView
+@property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
+@end
+
 @interface _SFNavigationBarURLButton : UIView
 @end
 
@@ -129,10 +160,6 @@
 @end
 
 @interface TabIconAndTitleView : UIImageView
-@end
-
-@interface _UIStatusBarStringView : UILabel
-@property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
 @end
 
 @interface NCNotificationListSectionRevealHintView : UIView
@@ -180,7 +207,6 @@ static BOOL folderbackground_hide = NO;
 static BOOL safarifavicon_hide = NO;
 static BOOL xdeletebutton_hide = NO;
 static BOOL separator_hide = NO;
-static BOOL sbvpn_hide = NO;
 static BOOL appswitcherheader_hide = NO;
 static BOOL statusbar_hide = NO;
 static BOOL sbcellular_hide = NO;
@@ -194,6 +220,10 @@ static BOOL betadots_hide = NO;
 static BOOL updatedots_hide = NO;
 static BOOL sbcellulartext_hide = NO;
 static BOOL swipetext_hide = NO;
-
+static BOOL hsbackdrop_hide = NO;
+static BOOL applabels_hide = NO;
+static BOOL sbicons_hide = NO;
+static BOOL todayview_hide = NO;
+static BOOL offloadedicon_hide = NO;
 
 BOOL hidesbtime = NO;
