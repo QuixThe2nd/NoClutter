@@ -9,3 +9,10 @@
 - Remove unneeded logos grouping
 ### Jamie's Changes
 - Tidied up code
+### Quix's Changes
+- Hides more carriers
+- Hide homescreen backdrop
+- Hide app labels
+- Hide status bar icons
+- Hide offloaded icon
+- Hide today view
