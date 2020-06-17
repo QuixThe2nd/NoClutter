@@ -444,6 +444,7 @@ NSString *carrierName;
 
 static void loadPrefs(){
     NSMutableDictionary *prefs = [[NSMutableDictionary alloc] initWithContentsOfFile:@"/var/mobile/Library/Preferences/com.iamparsa.noclutterprefs.plist"];
+
     if(prefs){
         enabled = ([prefs objectForKey:@"enabled"] ? [[prefs objectForKey:@"enabled"] boolValue] : enabled);
         padlock_hide = ([prefs objectForKey:@"padlock_hide"] ? [[prefs objectForKey:@"padlock_hide"] boolValue] : padlock_hide);
