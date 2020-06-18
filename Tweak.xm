@@ -369,10 +369,8 @@ NSString *carrierName;
 
 // NoPageDots
 %hook SBIconListPageControl
-- (id)initWithFrame:(CGRect)arg1{
-    if(pagedots_hide)
-        return nil;
-    return %orig;
+- (id)initWithFrame:(struct CGRect)arg1 {
+	return nil;
 }
 %end
 
@@ -386,18 +384,12 @@ NSString *carrierName;
 %end
 
 // NoAppLabels
-%hook SBIconLegibilityLabelView
-- (void)didMoveToWindow{
-    %orig;
+%hook SBMutableIconLabelImageParameters
+-(void)setTextColor:(id)arg1 {
     if(applabels_hide)
-        self.hidden = YES;
-}
-%end
-%hook _UILegibilityImageView
-- (void)didMoveToWindow{
-    %orig;
-    if(applabels_hide)
-        self.hidden = YES;
+        %orig([UIColor clearColor]);
+    else
+        %orig;
 }
 %end
 
@@ -503,7 +495,8 @@ static void loadPrefs(){
     CTCarrier *carrier = [[[CTTelephonyNetworkInfo alloc] init] subscriberCellularProvider];
     carrierName = [carrier carrierName];
     
-    if(enabled) {
-        %init;
-    }    
+    if([[[[NSProcessInfo processInfo] arguments] objectAtIndex:0] containsString:@"/Application"] || [[[[NSProcessInfo processInfo] arguments] objectAtIndex:0] containsString:@"SpringBoard.app"]){
+        if(enabled)
+            %init;
+    }
 }

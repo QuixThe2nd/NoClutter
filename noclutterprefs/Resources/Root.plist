@@ -260,12 +260,6 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>label</key>
-			<string>Hide cellular text supports certain providers only. DM me on Twitter (@QuixThe2nd) to get other providers added.</string>
-		</dict>
-		<dict>
-			<key>cell</key>
-			<string>PSGroupCell</string>
-			<key>label</key>
 			<string>Home Screen</string>
 		</dict>
 		<dict>
@@ -773,6 +767,14 @@
 			<string>Join the Discord</string>
 			<key>action</key>
 			<string>discord</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>Donate via PayPal</string>
+			<key>action</key>
+			<string>paypal</string>
 		</dict>
 		<dict>
 			<key>cell</key>

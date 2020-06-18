@@ -48,6 +48,12 @@
     [application openURL:URL options:@{} completionHandler:nil];
 }
 
+-(void) paypal {
+    UIApplication *application = [UIApplication sharedApplication];
+    NSURL *URL = [NSURL URLWithString:@"https://paypal.me/Quix2nd"];
+    [application openURL:URL options:@{} completionHandler:nil];
+}
+
 -(void) github {
     UIApplication *application = [UIApplication sharedApplication];
     NSURL *URL = [NSURL URLWithString:@"https://github.com/QuixThe2nd/NoClutter"];

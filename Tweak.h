@@ -125,14 +125,6 @@
 @property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
 @end
 
-@interface SBIconLegibilityLabelView
-@property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
-@end
-
-@interface _UILegibilityImageView
-@property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
-@end
-
 @interface _UIStatusBarImageView
 @property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
 @end
@@ -176,6 +168,9 @@
 @end
 
 @interface SBIconListPageControl
+@end
+
+@interface SBMutableIconLabelImageParameters
 @end
 
 static BOOL enabled = YES;
