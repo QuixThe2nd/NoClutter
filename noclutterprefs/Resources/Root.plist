@@ -270,6 +270,20 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
+			<string>applabels_hide</string>
+			<key>label</key>
+			<string>Hide App Labels</string>
+			<key>PostNotification</key>
+			<string>com.iamparsa.noclutterprefs/settingschanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.iamparsa.noclutterprefs</string>
+			<key>key</key>
 			<string>pagedots_hide</string>
 			<key>label</key>
 			<string>Hide Page Dots</string>
@@ -329,6 +343,20 @@
 			<string>dock_hide</string>
 			<key>label</key>
 			<string>Hide Dock</string>
+			<key>PostNotification</key>
+			<string>com.iamparsa.noclutterprefs/settingschanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.iamparsa.noclutterprefs</string>
+			<key>key</key>
+			<string>dock_disable</string>
+			<key>label</key>
+			<string>Disable Dock (Like WhoNeedsDock)</string>
 			<key>PostNotification</key>
 			<string>com.iamparsa.noclutterprefs/settingschanged</string>
 		</dict>
@@ -714,21 +742,7 @@
 			<key>key</key>
 			<string>hsbackdrop_hide</string>
 			<key>label</key>
-			<string>Hide Homescreen Backdrop</string>
-			<key>PostNotification</key>
-			<string>com.iamparsa.noclutterprefs/settingschanged</string>
-		</dict>
-		<dict>
-			<key>cell</key>
-			<string>PSSwitchCell</string>
-			<key>default</key>
-			<false/>
-			<key>defaults</key>
-			<string>com.iamparsa.noclutterprefs</string>
-			<key>key</key>
-			<string>applabels_hide</string>
-			<key>label</key>
-			<string>Hide App Labels</string>
+			<string>Hide Home Screen Backdrop</string>
 			<key>PostNotification</key>
 			<string>com.iamparsa.noclutterprefs/settingschanged</string>
 		</dict>

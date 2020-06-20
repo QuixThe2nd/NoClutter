@@ -109,6 +109,10 @@
 @property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
 @end
 
+@interface SBFloatingDockPlatterView
+@property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
+@end
+
 @interface UITabBarButtonLabel
 @property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
 @end
@@ -220,5 +224,6 @@ static BOOL applabels_hide = NO;
 static BOOL sbicons_hide = NO;
 static BOOL todayview_hide = NO;
 static BOOL offloadedicon_hide = NO;
+static BOOL dock_disable = NO;
 
 BOOL hidesbtime = NO;

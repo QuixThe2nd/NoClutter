@@ -36,7 +36,7 @@ NSString *carrierName;
 }
 %end
 
-// NoDock
+// HideDock
 %hook SBDockView
 - (void)layoutSubviews{
     %orig;
@@ -44,6 +44,27 @@ NSString *carrierName;
         self.hidden = YES;
 }
 %end
+%hook SBFloatingDockPlatterView
+- (void)layoutSubviews{
+    %orig;
+    if(dock_hide)
+        self.hidden = YES;
+}
+%end
+
+// DisableDock
+%hook SBDockView
+- (double)dockHeight{
+return 0.0;
+}
+%end
+%hook SBFloatingDockPlatterView
+- (double)dockHeight{
+return 0.0;
+}
+%end
+
+
 
 // NoSBTime
 // NoSBCellular
@@ -141,7 +162,7 @@ NSString *carrierName;
 %hook SBDockView
 - (void)didMoveToWindow{
     %orig;
-    if([self.subviews count] > 0 && dockbackground_hide)
+    if(dockbackground_hide)
         self.subviews[0].hidden = YES;
 }
 %end
@@ -150,7 +171,7 @@ NSString *carrierName;
 %hook _SFNavigationBarURLButton
 - (void)didMoveToWindow{
     %orig;
-    if([self.subviews count] > 0 && safarisearchbg_hide)
+    if(safarisearchbg_hide)
         self.subviews[0].hidden = YES;
 }
 %end
@@ -168,7 +189,7 @@ NSString *carrierName;
 %hook _UITableCellAccessoryButton
 - (void)layoutSubviews{
     %orig;
-    if([self.subviews count] > 0 && settingsarrow_hide)
+    if(settingsarrow_hide)
         self.subviews[0].hidden = YES;
 }
 %end
