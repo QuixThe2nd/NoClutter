@@ -38,6 +38,58 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>label</key>
+			<string>Support</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>Follow @QuixThe2nd on Twitter</string>
+			<key>action</key>
+			<string>twitter</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>Join the Discord</string>
+			<key>action</key>
+			<string>discord</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>Donate via PayPal</string>
+			<key>action</key>
+			<string>paypal</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>Github</string>
+			<key>action</key>
+			<string>github</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>Apply Changes</string>
+			<key>action</key>
+			<string>respring</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
 			<string>Springboard</string>
 		</dict>
 		<dict>
@@ -65,34 +117,6 @@
 			<string>breadcrumb_hide</string>
 			<key>label</key>
 			<string>Hide Breadcrumbs</string>
-			<key>PostNotification</key>
-			<string>com.iamparsa.noclutterprefs/settingschanged</string>
-		</dict>
-		<dict>
-			<key>cell</key>
-			<string>PSSwitchCell</string>
-			<key>default</key>
-			<false/>
-			<key>defaults</key>
-			<string>com.iamparsa.noclutterprefs</string>
-			<key>key</key>
-			<string>scrollbar_hide</string>
-			<key>label</key>
-			<string>Hide Scroll Bar</string>
-			<key>PostNotification</key>
-			<string>com.iamparsa.noclutterprefs/settingschanged</string>
-		</dict>
-		<dict>
-			<key>cell</key>
-			<string>PSSwitchCell</string>
-			<key>default</key>
-			<false/>
-			<key>defaults</key>
-			<string>com.iamparsa.noclutterprefs</string>
-			<key>key</key>
-			<string>separator_hide</string>
-			<key>label</key>
-			<string>Hide Separator Lines</string>
 			<key>PostNotification</key>
 			<string>com.iamparsa.noclutterprefs/settingschanged</string>
 		</dict>
@@ -208,20 +232,6 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>sbcellulartext_hide</string>
-			<key>label</key>
-			<string>Hide Cellular Text (Eg. AT&amp;T)</string>
-			<key>PostNotification</key>
-			<string>com.iamparsa.noclutterprefs/settingschanged</string>
-		</dict>
-		<dict>
-			<key>cell</key>
-			<string>PSSwitchCell</string>
-			<key>default</key>
-			<false/>
-			<key>defaults</key>
-			<string>com.iamparsa.noclutterprefs</string>
-			<key>key</key>
 			<string>sbbattery_hide</string>
 			<key>label</key>
 			<string>Hide Battery</string>
@@ -261,6 +271,20 @@
 			<string>PSGroupCell</string>
 			<key>label</key>
 			<string>Home Screen</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.iamparsa.noclutterprefs</string>
+			<key>key</key>
+			<string>hsbackdrop_hide</string>
+			<key>label</key>
+			<string>Hide Home Screen Backdrop</string>
+			<key>PostNotification</key>
+			<string>com.iamparsa.noclutterprefs/settingschanged</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -564,20 +588,6 @@
 		</dict>
 		<dict>
 			<key>cell</key>
-			<string>PSSwitchCell</string>
-			<key>default</key>
-			<false/>
-			<key>defaults</key>
-			<string>com.iamparsa.noclutterprefs</string>
-			<key>key</key>
-			<string>notificationcentertext_hide</string>
-			<key>label</key>
-			<string>Hide Clear Notifications Button</string>
-			<key>PostNotification</key>
-			<string>com.iamparsa.noclutterprefs/settingschanged</string>
-		</dict>
-		<dict>
-			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>label</key>
 			<string>Safari</string>
@@ -710,7 +720,35 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>label</key>
-			<string>Settings</string>
+			<string>Experimental</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.iamparsa.noclutterprefs</string>
+			<key>key</key>
+			<string>scrollbar_hide</string>
+			<key>label</key>
+			<string>Hide Scroll Bar</string>
+			<key>PostNotification</key>
+			<string>com.iamparsa.noclutterprefs/settingschanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.iamparsa.noclutterprefs</string>
+			<key>key</key>
+			<string>separator_hide</string>
+			<key>label</key>
+			<string>Hide Separator Lines</string>
+			<key>PostNotification</key>
+			<string>com.iamparsa.noclutterprefs/settingschanged</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -728,75 +766,17 @@
 		</dict>
 		<dict>
 			<key>cell</key>
-			<string>PSGroupCell</string>
-			<key>label</key>
-			<string>Experimental</string>
-		</dict>
-		<dict>
-			<key>cell</key>
 			<string>PSSwitchCell</string>
 			<key>default</key>
 			<false/>
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>hsbackdrop_hide</string>
+			<string>sbcellulartext_hide</string>
 			<key>label</key>
-			<string>Hide Home Screen Backdrop</string>
+			<string>Hide Cellular Text (Eg. AT&amp;T)</string>
 			<key>PostNotification</key>
 			<string>com.iamparsa.noclutterprefs/settingschanged</string>
-		</dict>
-		<dict>
-			<key>cell</key>
-			<string>PSGroupCell</string>
-			<key>label</key>
-			<string></string>
-		</dict>
-		<dict>
-			<key>cell</key>
-			<string>PSButtonCell</string>
-			<key>label</key>
-			<string>Apply Changes</string>
-			<key>action</key>
-			<string>respring</string>
-		</dict>
-		<dict>
-			<key>cell</key>
-			<string>PSGroupCell</string>
-			<key>label</key>
-			<string>Support</string>
-		</dict>
-		<dict>
-			<key>cell</key>
-			<string>PSButtonCell</string>
-			<key>label</key>
-			<string>Follow @QuixThe2nd on Twitter</string>
-			<key>action</key>
-			<string>twitter</string>
-		</dict>
-		<dict>
-			<key>cell</key>
-			<string>PSButtonCell</string>
-			<key>label</key>
-			<string>Join the Discord</string>
-			<key>action</key>
-			<string>discord</string>
-		</dict>
-		<dict>
-			<key>cell</key>
-			<string>PSButtonCell</string>
-			<key>label</key>
-			<string>Donate via PayPal</string>
-			<key>action</key>
-			<string>paypal</string>
-		</dict>
-		<dict>
-			<key>cell</key>
-			<string>PSButtonCell</string>
-			<key>label</key>
-			<string>Github</string>
-			<key>action</key>
-			<string>github</string>
 		</dict>
 		<dict>
 			<key>cell</key>

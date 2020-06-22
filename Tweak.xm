@@ -29,62 +29,64 @@ NSString *carrierName;
 
 // NoScrollBar
 %hook _UIScrollViewScrollIndicator
-- (void)didMoveToWindow{
-    %orig;
+- (void)layoutSubviews{
+    return %orig;
     if(scrollbar_hide)
         self.hidden = YES;
 }
 %end
 
 // HideDock
-%hook SBDockView
-- (void)layoutSubviews{
-    %orig;
-    if(dock_hide)
-        self.hidden = YES;
-}
-%end
-%hook SBFloatingDockPlatterView
-- (void)layoutSubviews{
-    %orig;
-    if(dock_hide)
-        self.hidden = YES;
-}
-%end
-
 // DisableDock
 %hook SBDockView
+- (void)layoutSubviews{
+    %orig;
+    if(dock_hide || dock_disable)
+        self.hidden = YES;
+}
+%end
+%hook SBFloatingDockPlatterView
+- (void)layoutSubviews{
+    %orig;
+    if(dock_hide || dock_disable)
+        self.hidden = YES;
+}
+%end
+%hook SBDockView
 - (double)dockHeight{
-return 0.0;
+    return %orig;
+    if(dock_disable)
+        return 0.0;
 }
 %end
 %hook SBFloatingDockPlatterView
 - (double)dockHeight{
-return 0.0;
+    return %orig;
+    if(dock_disable)
+        return 0.0;
 }
 %end
-
-
 
 // NoSBTime
 // NoSBCellular
 // NoSBCellularText
 %hook _UIStatusBarStringView
 - (void)didMoveToWindow{
-    %orig;
-    if(sbcellular_hide){
-        if([self.text containsString:@"LTE"] || [self.text containsString:@"5G"] || [self.text containsString:@"5Ge"] || [self.text containsString:@"4G"] || [self.text containsString:@"3G"] || [self.text containsString:@"SOS"]){
+    return %orig;
+    if([self.text containsString:@"LTE"] || [self.text containsString:@"5G"] || [self.text containsString:@"5Ge"] || [self.text containsString:@"4G"] || [self.text containsString:@"3G"] || [self.text containsString:@"SOS"]){
+        if(sbcellular_hide)
             self.hidden = YES;
-            hidesbtime = YES;
-        }
-    }
-
-    if([self.text isEqualToString:carrierName]) {
-        self.hidden = sbcellulartext_hide;
         hidesbtime = YES;
     }
 
-    if(!hidesbtime) self.hidden = sbtime_hide;
+    if([self.text isEqualToString:carrierName]) {
+        if(sbcellulartext_hide)
+            self.hidden = YES;
+        hidesbtime = YES;
+    }
+
+    if(!hidesbtime && sbtime_hide)
+        self.hidden = YES;
 }
 %end
 
@@ -293,15 +295,15 @@ return 0.0;
 
 // NoSeparator
 %hook _UIInterfaceActionVibrantSeparatorView
-- (void)didMoveToWindow{
-    %orig;
+- (void)layoutSubviews{
+    return %orig;
     if(separator_hide)
         self.hidden = YES;
 }
 %end
 %hook _UITableViewCellSeparatorView
-- (void)didMoveToWindow{
-    %orig;
+- (void)layoutSubviews{
+    return %orig;
     if(separator_hide)
         self.hidden = YES;
 }
@@ -363,7 +365,7 @@ return 0.0;
 
 // NoTabLabel
 %hook UITabBarButtonLabel
-- (void)didMoveToWindow{
+- (void)layoutSubviews{
     %orig;
     if(tablabel_hide)
         self.hidden = YES;
@@ -372,7 +374,7 @@ return 0.0;
 
 // NoBetaDots
 %hook SBIconBetaLabelAccessoryView
-- (void)didMoveToWindow{
+- (void)layoutSubviews{
     %orig;
     if(betadots_hide)
         self.hidden = YES;
@@ -381,7 +383,7 @@ return 0.0;
 
 // NoUpdateDots
 %hook SBIconRecentlyUpdatedLabelAccessoryView
-- (void)didMoveToWindow{
+- (void)layoutSubviews{
     %orig;
     if(updatedots_hide)
         self.hidden = YES;
@@ -390,8 +392,10 @@ return 0.0;
 
 // NoPageDots
 %hook SBIconListPageControl
-- (id)initWithFrame:(struct CGRect)arg1 {
-	return nil;
+- (id)initWithFrame:(CGRect)arg1{
+	return %orig;
+    if(pagedots_hide)
+        return nil;
 }
 %end
 
