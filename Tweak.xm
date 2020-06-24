@@ -40,26 +40,32 @@ NSString *carrierName;
 // DisableDock
 %hook SBDockView
 - (void)layoutSubviews{
-    return %orig;
-    if(dock_hide || dock_disable)
+    %orig;
+    if(dock_hide || dock_disable) {
         self.hidden = YES;
+    }
+
+    if (dockbackground_hide) {
+        UIView *bgView = MSHookIvar<UIView *>(self, "_backgroundView"); 
+        bgView.alpha = 0;
+        bgView.hidden = YES;
+    }
 }
-%end
-%hook SBFloatingDockPlatterView
-- (void)layoutSubviews{
-    return %orig;
-    if(dock_hide || dock_disable)
-        self.hidden = YES;
-}
-%end
-%hook SBDockView
+
 - (double)dockHeight{
     return %orig;
     if(dock_disable)
         return 0.0;
 }
 %end
+
 %hook SBFloatingDockPlatterView
+- (void)layoutSubviews{
+    return %orig;
+    if(dock_hide || dock_disable)
+        self.hidden = YES;
+}
+
 - (double)dockHeight{
     return %orig;
     if(dock_disable)
@@ -116,6 +122,7 @@ NSString *carrierName;
         self.hidden = YES;
 }
 %end
+
 %hook SparkBatteryView
 - (void)didMoveToWindow{
     return %orig;
@@ -157,15 +164,6 @@ NSString *carrierName;
         %orig(0);
         return;
     }
-}
-%end
-
-// NoDockBackground
-%hook SBDockView
-- (void)didMoveToWindow{
-    return %orig;
-    if(dockbackground_hide)
-        self.subviews[0].hidden = YES;
 }
 %end
 
@@ -382,11 +380,19 @@ NSString *carrierName;
 %end
 
 // NoUpdateDots
-%hook SBIconRecentlyUpdatedLabelAccessoryView
-- (void)layoutSubviews{
+%hook SBApplication
+-(bool)_isRecentlyUpdated {
+    if(updatedots_hide) {
+        return NO;
+    }
     return %orig;
-    if(updatedots_hide)
-        self.hidden = YES;
+}
+-(void)_setRecentlyUpdated:(bool)arg1 {
+    if(updatedots_hide) {
+        %orig(NO);
+    } else {
+        %orig;
+    }
 }
 %end
 
@@ -480,8 +486,9 @@ NSString *carrierName;
 %hook Post
 - (bool)isHidden{
     return %orig;  
-    if([NSStringFromClass([self classForCoder]) isEqual:@"AdPost"] && redditads_hide)
-        return 1;
+    if([NSStringFromClass([self classForCoder]) isEqual:@"AdPost"] && redditads_hide) {
+        return YES;
+    }
 }
 %end
 
@@ -547,25 +554,10 @@ static void loadPrefs(){
 
     CTCarrier *carrier = [[[CTTelephonyNetworkInfo alloc] init] subscriberCellularProvider];
     carrierName = [carrier carrierName];
-    
-    if (!enabled) return;
 
-    NSArray *args = [[NSClassFromString(@"NSProcessInfo") processInfo] arguments];
-    NSUInteger count = args.count;
-    if (count != 0) {
-        NSString *executablePath = args[0];
-        if (executablePath) {
-            NSString *processName = [executablePath lastPathComponent];
-            BOOL isApplication = [executablePath rangeOfString:@"/Application/"].location != NSNotFound || [executablePath rangeOfString:@"/Applications/"].location != NSNotFound;
-            BOOL isFileProvider = [[processName lowercaseString] rangeOfString:@"fileprovider"].location != NSNotFound;
-            BOOL skip = [processName isEqualToString:@"AdSheet"]
-                        || [processName isEqualToString:@"CoreAuthUI"]
-                        || [processName isEqualToString:@"InCallService"]
-                        || [processName isEqualToString:@"MessagesNotificationViewService"]
-                        || [executablePath rangeOfString:@".appex/"].location != NSNotFound;
-            if (!isFileProvider && isApplication && !skip) {
-                %init;
-            }
+    if([[[[NSProcessInfo processInfo] arguments] objectAtIndex:0] containsString:@"/Application"] || [[[[NSProcessInfo processInfo] arguments] objectAtIndex:0] containsString:@"SpringBoard.app"]){
+        if(enabled) {
+            %init;
         }
     }
 }
