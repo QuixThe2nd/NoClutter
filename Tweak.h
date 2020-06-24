@@ -177,6 +177,13 @@
 @interface SBMutableIconLabelImageParameters
 @end
 
+@interface TFNItemsDataViewController : NSObject
+- (id)itemAtIndexPath:(id)arg1;
+@end
+
+@interface Post : NSObject
+@end
+
 static BOOL enabled = YES;
 static BOOL padlock_hide = NO;
 static BOOL ccbar_hide = NO;
@@ -225,5 +232,7 @@ static BOOL sbicons_hide = NO;
 static BOOL todayview_hide = NO;
 static BOOL offloadedicon_hide = NO;
 static BOOL dock_disable = NO;
+static BOOL twitterads_hide = NO;
+static BOOL redditads_hide = NO;
 
 BOOL hidesbtime = NO;
