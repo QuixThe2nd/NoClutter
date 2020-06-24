@@ -105,7 +105,9 @@
 @property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
 @end
 
-@interface SBDockView : UIView
+@interface SBDockView : UIView {
+	UIView *_backgroundView;
+}
 @property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
 @end
 
