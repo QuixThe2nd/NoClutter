@@ -555,9 +555,6 @@ static void loadPrefs(){
     CTCarrier *carrier = [[[CTTelephonyNetworkInfo alloc] init] subscriberCellularProvider];
     carrierName = [carrier carrierName];
 
-    if([[[[NSProcessInfo processInfo] arguments] objectAtIndex:0] containsString:@"/Application"] || [[[[NSProcessInfo processInfo] arguments] objectAtIndex:0] containsString:@"SpringBoard.app"]){
-        if(enabled) {
-            %init;
-        }
-    }
+    if(enabled)
+        %init;
 }
