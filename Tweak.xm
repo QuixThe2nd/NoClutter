@@ -5,9 +5,9 @@ NSString *carrierName;
 // NoPadlock
 %hook BSUICAPackageView
 - (void)didMoveToWindow{
-    return %orig;
     if(padlock_hide)
         self.hidden = YES;
+    %orig;
 }
 %end
 
@@ -15,24 +15,24 @@ NSString *carrierName;
 // NoSwipeText
 %hook CSTeachableMomentsContainerView
 - (void)didMoveToWindow{
-    return %orig;
     if(ccbar_hide && self.controlCenterGrabberContainerView)
         self.controlCenterGrabberContainerView.hidden = YES;
+    %orig;
 }
 - (void)_layoutCallToActionLabel{
-    return %orig;
     SBUILegibilityLabel* label = MSHookIvar<SBUILegibilityLabel *>(self, "_callToActionLabel");
     if(swipetext_hide)
         label.hidden = YES;
+    %orig;
 }
 %end
 
 // NoScrollBar
 %hook _UIScrollViewScrollIndicator
 - (void)layoutSubviews{
-    return %orig;
     if(scrollbar_hide)
         self.hidden = YES;
+    %orig;
 }
 %end
 
@@ -40,7 +40,6 @@ NSString *carrierName;
 // DisableDock
 %hook SBDockView
 - (void)layoutSubviews{
-    %orig;
     if(dock_hide || dock_disable) {
         self.hidden = YES;
     }
@@ -50,6 +49,7 @@ NSString *carrierName;
         bgView.alpha = 0;
         bgView.hidden = YES;
     }
+    %orig;
 }
 
 - (double)dockHeight{
@@ -61,9 +61,9 @@ NSString *carrierName;
 
 %hook SBFloatingDockPlatterView
 - (void)layoutSubviews{
-    return %orig;
     if(dock_hide || dock_disable)
         self.hidden = YES;
+    %orig;
 }
 
 - (double)dockHeight{
@@ -78,7 +78,6 @@ NSString *carrierName;
 // NoSBCellularText
 %hook _UIStatusBarStringView
 - (void)didMoveToWindow{
-    return %orig;
     if([self.text containsString:@"LTE"] || [self.text containsString:@"5G"] || [self.text containsString:@"5Ge"] || [self.text containsString:@"4G"] || [self.text containsString:@"3G"] || [self.text containsString:@"SOS"]){
         if(sbcellular_hide)
             self.hidden = YES;
@@ -93,13 +92,14 @@ NSString *carrierName;
 
     if(!hidesbtime && sbtime_hide)
         self.hidden = YES;
+    %orig;
 }
 %end
 
 // NoSBSignal
 %hook _UIStatusBarCellularSignalView
 - (void)didMoveToWindow{
-    return %orig;
+    %orig;
     if(sbsignal_hide)
         self.hidden = YES;
 }
@@ -108,7 +108,7 @@ NSString *carrierName;
 // NoSBWifi
 %hook _UIStatusBarWifiSignalView
 - (void)didMoveToWindow{
-    return %orig;
+    %orig;
     if(sbwifi_hide)
         self.hidden = YES;
 }
@@ -117,7 +117,7 @@ NSString *carrierName;
 // NoSBBattery
 %hook _UIBatteryView
 - (void)didMoveToWindow{
-    return %orig;
+    %orig;
     if(sbbattery_hide)
         self.hidden = YES;
 }
@@ -125,7 +125,7 @@ NSString *carrierName;
 
 %hook SparkBatteryView
 - (void)didMoveToWindow{
-    return %orig;
+    %orig;
     if(sbbattery_hide)
         self.hidden = YES;
 }
@@ -134,7 +134,7 @@ NSString *carrierName;
 // NoQuickActionToggles
 %hook CSQuickActionsView
 - (void)didMoveToWindow{
-    return %orig;
+    %orig;
     if(quickactiontoggles_hide)
         self.hidden = YES;
 }
@@ -143,7 +143,7 @@ NSString *carrierName;
 // NoNotificationCenterText
 %hook NCNotificationListHeaderTitleView
 - (void)didMoveToWindow{
-    return %orig;
+    %orig;
     if(notificationcentertext_hide)
         self.hidden = YES;
 }
@@ -152,25 +152,25 @@ NSString *carrierName;
 // NoHomeBar
 %hook MTLumaDodgePillSettings
 - (void)setHeight:(double)arg1{
-    return %orig;
     if(homebar_hide){
         %orig(0);
         return;
     }
+    %orig;
 }
 - (void)setMinWidth:(double)arg1{
-    return %orig;
     if(homebar_hide){
         %orig(0);
         return;
     }
+    %orig;
 }
 %end
 
 // NoSafarisSarchBG
 %hook _SFNavigationBarURLButton
 - (void)didMoveToWindow{
-    return %orig;
+    %orig;
     if(safarisearchbg_hide)
         self.subviews[0].hidden = YES;
 }
@@ -179,7 +179,7 @@ NSString *carrierName;
 // NoSafariCloseTabButton
 %hook _SFDimmingButton
 - (void)didMoveToWindow{
-    return %orig;
+    %orig;
     if(safariclosetabbutton_hide)
         self.hidden = YES;
 }
@@ -188,7 +188,7 @@ NSString *carrierName;
 // NoSettingsArrow
 %hook _UITableCellAccessoryButton
 - (void)layoutSubviews{
-    return %orig;
+    %orig;
     if(settingsarrow_hide)
         self.subviews[0].hidden = YES;
 }
@@ -204,7 +204,7 @@ NSString *carrierName;
 // NoAppSwitcherHeader
 %hook SBFluidSwitcherItemContainerHeaderView
 - (void)didMoveToWindow{
-    return %orig;
+    %orig;
     if(appswitcherheader_hide)
         self.hidden = YES;
 }
@@ -213,7 +213,7 @@ NSString *carrierName;
 // NoAppSwitcherIcons
 %hook SBFluidSwitcherIconImageContainerView
 - (void)didMoveToWindow{
-    return %orig;
+    %orig;
     if(appswitchericons_hide)
         self.hidden = YES;
 }
@@ -222,8 +222,17 @@ NSString *carrierName;
 // NoCCStatusBar
 %hook CCUIStatusBar
 - (void)didMoveToWindow{
-    return %orig;
+    %orig;
     if(ccstatusbar_hide)
+        self.hidden = YES;
+}
+%end
+
+// NoStatusBar
+%hook _UIStatusBar
+- (void)didMoveToWindow{
+    %orig;
+    if(statusbar_hide)
         self.hidden = YES;
 }
 %end
@@ -231,7 +240,7 @@ NSString *carrierName;
 // NoFolderTitle
 %hook SBFolderTitleTextField
 - (void)didMoveToWindow{
-    return %orig;
+    %orig;
     if(foldertitle_hide)
         self.hidden = YES;
 }
@@ -240,7 +249,7 @@ NSString *carrierName;
 // NoFolderBackground
 %hook SBFolderBackgroundView
 - (void)didMoveToWindow{
-    return %orig;
+    %orig;
     if(folderbackground_hide)
         self.hidden = YES;
 }
@@ -249,7 +258,7 @@ NSString *carrierName;
 // NoFolderBlur
 %hook SBFolderControllerBackgroundView
 - (void)didMoveToWindow{
-    return %orig;
+    %orig;
     if(folderblur_hide)
         self.hidden = YES;
 }
@@ -258,7 +267,7 @@ NSString *carrierName;
 // NoIconBadge
 %hook SBIconBadgeView
 - (void)didMoveToWindow{
-    return %orig;
+    %orig;
     if(iconbadge_hide)
         self.hidden = YES;
 }
@@ -267,7 +276,7 @@ NSString *carrierName;
 // NoEditingDoneButton
 %hook SBHEditingDoneButton
 - (void)didMoveToWindow{
-    return %orig;
+    %orig;
     if(editingdonebutton_hide)
         self.hidden = YES;
 }
@@ -276,7 +285,7 @@ NSString *carrierName;
 // NoFavicon
 %hook TabIconAndTitleView
 - (void)didMoveToWindow{
-    return %orig;
+    %orig;
     if([self.subviews count] > 0)
         self.subviews[0].hidden = safarifavicon_hide;
 }
@@ -285,7 +294,7 @@ NSString *carrierName;
 // NoXDeleteButton
 %hook SBXCloseBoxView
 - (void)didMoveToWindow{
-    return %orig;
+    %orig;
     if(xdeletebutton_hide)
         self.hidden = YES;
 }
@@ -294,24 +303,15 @@ NSString *carrierName;
 // NoSeparator
 %hook _UIInterfaceActionVibrantSeparatorView
 - (void)layoutSubviews{
-    return %orig;
+    %orig;
     if(separator_hide)
         self.hidden = YES;
 }
 %end
 %hook _UITableViewCellSeparatorView
 - (void)layoutSubviews{
-    return %orig;
+    %orig;
     if(separator_hide)
-        self.hidden = YES;
-}
-%end
-
-// NoStatusBar
-%hook _UIStatusBar
-- (void)didMoveToWindow{
-    return %orig;
-    if(statusbar_hide)
         self.hidden = YES;
 }
 %end
@@ -319,7 +319,7 @@ NSString *carrierName;
 // NoWidgetFooter
 %hook WGWidgetListFooterView
 - (void)didMoveToWindow{
-    return %orig;
+    %orig;
     if(widgetfooter_hide)
         self.hidden = YES;
 }
@@ -328,7 +328,7 @@ NSString *carrierName;
 // NoStatusBarPill
 %hook _UIStatusBarPillView
 - (void)didMoveToWindow{
-    return %orig;
+    %orig;
     if(sbpill_hide)
         self.hidden = YES;
 }
@@ -337,7 +337,7 @@ NSString *carrierName;
 // NoNoOlderNotification
 %hook NCNotificationListSectionRevealHintView
 - (void)didMoveToWindow{
-    return %orig;
+    %orig;
     SBUILegibilityLabel* label = MSHookIvar<SBUILegibilityLabel *>(self, "_revealHintTitle");
     if(nooldernotifications_hide)
         label.hidden = YES;
@@ -347,7 +347,7 @@ NSString *carrierName;
 // NoFaceIDGlyph
 %hook SBUIProudLockIconView
 - (void)layoutSubviews{
-    return %orig;
+    %orig;
     if(nofaceidglyph_hide)
         self.hidden = YES;
 }
@@ -355,16 +355,16 @@ NSString *carrierName;
 
 // NoDNDBanner
 %hook DNDNotificationsService
-- (void)_queue_postOrRemoveNotificationWithUpdatedBehavior:(BOOL)arg1 significantTimeChange:(BOOL)arg2{
-    return %orig;
-    if(dnd_hide) return;
+-(void)_queue_postOrRemoveNotificationWithUpdatedBehavior:(BOOL)arg1 significantTimeChange:(BOOL)arg2{
+	if(dnd_hide) return;
+	%orig;
 }
 %end
 
 // NoTabLabel
 %hook UITabBarButtonLabel
 - (void)layoutSubviews{
-    return %orig;
+    %orig;
     if(tablabel_hide)
         self.hidden = YES;
 }
@@ -373,7 +373,7 @@ NSString *carrierName;
 // NoBetaDots
 %hook SBIconBetaLabelAccessoryView
 - (void)layoutSubviews{
-    return %orig;
+    %orig;
     if(betadots_hide)
         self.hidden = YES;
 }
@@ -399,16 +399,16 @@ NSString *carrierName;
 // NoPageDots
 %hook SBIconListPageControl
 - (id)initWithFrame:(CGRect)arg1{
-    return %orig;
     if(pagedots_hide)
         return nil;
+    return %orig;
 }
 %end
 
 // NoHSBackdrop
 %hook SBHomeScreenBackdropView
 - (void)didMoveToWindow{
-    return %orig;
+    %orig;
     if(hsbackdrop_hide)
         self.hidden = YES;
 }
@@ -417,7 +417,7 @@ NSString *carrierName;
 // NoAppLabels
 %hook SBMutableIconLabelImageParameters
 -(void)setTextColor:(id)arg1{
-    return %orig;
+    %orig;
     if(applabels_hide)
         %orig([UIColor clearColor]);
 }
@@ -426,7 +426,7 @@ NSString *carrierName;
 // NoSBImageViews
 %hook _UIStatusBarImageView
 - (void)didMoveToWindow{
-    return %orig;
+    %orig;
     if(sbicons_hide)
         self.hidden = YES;
 }
@@ -435,7 +435,7 @@ NSString *carrierName;
 // NoOffloadedIcon
 %hook SBIconCloudLabelAccessoryView
 - (void)didMoveToWindow{
-    return %orig;
+    %orig;
     if(offloadedicon_hide)
         self.hidden = YES;
 }
@@ -444,21 +444,21 @@ NSString *carrierName;
 // HideTodayView
 %hook WGWidgetWrapperView
 - (void)layoutSubviews{
-    return %orig;
+    %orig;
     if(todayview_hide)
         self.hidden = true;
 }
 %end
 %hook SBSearchBar
 - (void)layoutSubviews{
-    return %orig;
+    %orig;
     if(todayview_hide)
         self.hidden = true;
 }
 %end
 %hook WGWidgetListFooterView
 - (void)layoutSubviews{
-    return %orig;
+    %orig;
     if(todayview_hide)
         self.hidden = true;
 }
