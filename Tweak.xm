@@ -549,7 +549,10 @@ static void loadPrefs(){
 }
 
 %ctor{
-    CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)loadPrefs, CFSTR("com.iamparsa.noclutter/settingschanged"), NULL, CFNotificationSuspensionBehaviorCoalesce);
+    pfs = [[HBPreferences alloc] initWithIdentifier:@"com.iamparsa.noclutterprefs"];
+    [pfs registerBool:&enabled default:YES forKey:@"enabled"];
+    [pfs registerBool:&backgroundBlur default:YES forKey:@"backgroundBlur"];
+    CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)loadPrefs, CFSTR("com.iamparsa.noclutter/ReloadPrefs"), NULL, CFNotificationSuspensionBehaviorCoalesce);
     loadPrefs();
 
     CTCarrier *carrier = [[[CTTelephonyNetworkInfo alloc] init] subscriberCellularProvider];
