@@ -17,23 +17,16 @@
 @property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
 @end
 
-@interface _UIStatusBarCellularSignalView
-@property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
+@interface _UIStatusBarCellularSignalView : UIView
 @end
 
-@interface _UIStatusBarWifiSignalView
-@property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
+@interface _UIStatusBarWifiSignalView : UIView
 @end
 
-@interface _UIBatteryView
-@property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
+@interface _UIBatteryView : UIView
 @end
 
 @interface SparkBatteryView
-@property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
-@end
-
-@interface CSQuickActionsView
 @property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
 @end
 
@@ -151,6 +144,10 @@
 @property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
 @end
 
+@interface CSQuickActionsView : UIView
+@property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
+@end
+
 @interface _SFNavigationBarURLButton : UIView
 @end
 
@@ -187,54 +184,62 @@
 @end
 
 static BOOL enabled = YES;
-static BOOL padlock_hide = NO;
-static BOOL ccbar_hide = NO;
-static BOOL pagedots_hide = NO;
-static BOOL scrollbar_hide = NO;
-static BOOL dock_hide = NO;
-static BOOL dockbackground_hide = NO;
-static BOOL sbtime_hide = NO;
-static BOOL sbsignal_hide = NO;
-static BOOL sbwifi_hide = NO;
-static BOOL sbbattery_hide = NO;
-static BOOL homebar_hide = NO;
-static BOOL safarisearchbg_hide = NO;
-static BOOL safariclosetabbutton_hide = NO;
-static BOOL settingsarrow_hide = NO;
-static BOOL quickactiontoggles_hide = NO;
-static BOOL notificationcentertext_hide = NO;
-static BOOL breadcrumb_hide = NO;
-static BOOL appswitchericons_hide = NO;
-static BOOL appswitcherlabels_hide = NO;
-static BOOL ccstatusbar_hide = NO;
-static BOOL foldertitle_hide = NO;
-static BOOL folderblur_hide = NO;
-static BOOL iconbadge_hide = NO;
-static BOOL editingdonebutton_hide = NO;
-static BOOL folderbackground_hide = NO;
-static BOOL safarifavicon_hide = NO;
-static BOOL xdeletebutton_hide = NO;
-static BOOL separator_hide = NO;
-static BOOL appswitcherheader_hide = NO;
-static BOOL statusbar_hide = NO;
-static BOOL sbcellular_hide = NO;
-static BOOL widgetfooter_hide = NO;
-static BOOL sbpill_hide = NO;
-static BOOL nooldernotifications_hide = NO;
-static BOOL nofaceidglyph_hide = NO;
-static BOOL dnd_hide = NO;
-static BOOL tablabel_hide = NO;
-static BOOL betadots_hide = NO;
-static BOOL updatedots_hide = NO;
-static BOOL sbcellulartext_hide = NO;
-static BOOL swipetext_hide = NO;
-static BOOL hsbackdrop_hide = NO;
-static BOOL applabels_hide = NO;
-static BOOL sbicons_hide = NO;
-static BOOL todayview_hide = NO;
-static BOOL offloadedicon_hide = NO;
+static BOOL padlock = NO;
+static BOOL ccbar = NO;
+static BOOL pagedots = NO;
+static BOOL scrollbar = NO;
+static BOOL dock = NO;
+static BOOL dockbackground = NO;
+static BOOL sbtime = NO;
+static BOOL sbsignal = NO;
+static BOOL sbwifi = NO;
+static BOOL sbbattery = NO;
+static BOOL homebar = NO;
+static BOOL safarisearchbg = NO;
+static BOOL safariclosetabbutton = NO;
+static BOOL settingsarrow = NO;
+static BOOL quickactiontoggles = NO;
+static BOOL notificationcentertext = NO;
+static BOOL breadcrumb = NO;
+static BOOL appswitchericons = NO;
+static BOOL appswitcherlabels = NO;
+static BOOL ccstatusbar = NO;
+static BOOL foldertitle = NO;
+static BOOL folderblur = NO;
+static BOOL iconbadge = NO;
+static BOOL editingdonebutton = NO;
+static BOOL folderbackground = NO;
+static BOOL safarifavicon = NO;
+static BOOL xdeletebutton = NO;
+static BOOL separator = NO;
+static BOOL appswitcherheader = NO;
+static BOOL statusbar = NO;
+static BOOL sbcellular = NO;
+static BOOL widgetfooter = NO;
+static BOOL sbpill = NO;
+static BOOL nooldernotifications = NO;
+static BOOL nofaceidglyph = NO;
+static BOOL dnd = NO;
+static BOOL tablabel = NO;
+static BOOL betadots = NO;
+static BOOL updatedots = NO;
+static BOOL sbcellulartext = NO;
+static BOOL swipetext = NO;
+static BOOL hsbackdrop = NO;
+static BOOL applabels = NO;
+static BOOL sbicons = NO;
+static BOOL todayview = NO;
+static BOOL offloadedicon = NO;
 static BOOL dock_disable = NO;
-static BOOL twitterads_hide = NO;
-static BOOL redditads_hide = NO;
+static BOOL twitterads = NO;
+static BOOL redditads = NO;
+static BOOL shuttersound = NO;
+static BOOL cameraquickactiontoggles = NO;
+static BOOL torchquickactiontoggles = NO;
+static BOOL videoshuttersound = NO;
+static BOOL chargesound = NO;
+static BOOL endvideoshuttersound = NO;
+static BOOL NoKeyPressSound = NO;
+static BOOL endlocksound = NO;
 
 BOOL hidesbtime = NO;

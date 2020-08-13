@@ -100,7 +100,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>homebar_hide</string>
+			<string>homebar</string>
 			<key>label</key>
 			<string>Hide Homebar</string>
 			<key>PostNotification</key>
@@ -114,7 +114,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>breadcrumb_hide</string>
+			<string>breadcrumb</string>
 			<key>label</key>
 			<string>Hide Breadcrumbs</string>
 			<key>PostNotification</key>
@@ -128,7 +128,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>tablabel_hide</string>
+			<string>tablabel</string>
 			<key>label</key>
 			<string>Hide Tab Labels</string>
 			<key>PostNotification</key>
@@ -142,7 +142,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>scrollbar_hide</string>
+			<string>scrollbar</string>
 			<key>label</key>
 			<string>Hide Scroll Bar</string>
 			<key>PostNotification</key>
@@ -156,7 +156,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>separator_hide</string>
+			<string>separator</string>
 			<key>label</key>
 			<string>Hide Separator Lines</string>
 			<key>PostNotification</key>
@@ -176,7 +176,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>statusbar_hide</string>
+			<string>statusbar</string>
 			<key>label</key>
 			<string>Hide Full Status Bar</string>
 			<key>PostNotification</key>
@@ -190,7 +190,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>ccstatusbar_hide</string>
+			<string>ccstatusbar</string>
 			<key>label</key>
 			<string>Hide Status Bar in CC</string>
 			<key>PostNotification</key>
@@ -204,7 +204,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>sbtime_hide</string>
+			<string>sbtime</string>
 			<key>label</key>
 			<string>Hide Time</string>
 			<key>PostNotification</key>
@@ -218,7 +218,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>sbsignal_hide</string>
+			<string>sbsignal</string>
 			<key>label</key>
 			<string>Hide Cellular Bars</string>
 			<key>PostNotification</key>
@@ -232,7 +232,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>sbwifi_hide</string>
+			<string>sbwifi</string>
 			<key>label</key>
 			<string>Hide Wifi</string>
 			<key>PostNotification</key>
@@ -246,7 +246,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>sbcellular_hide</string>
+			<string>sbcellular</string>
 			<key>label</key>
 			<string>Hide Cellular (Eg. 4G)</string>
 			<key>PostNotification</key>
@@ -260,7 +260,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>sbbattery_hide</string>
+			<string>sbbattery</string>
 			<key>label</key>
 			<string>Hide Battery</string>
 			<key>PostNotification</key>
@@ -274,7 +274,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>sbpill_hide</string>
+			<string>sbpill</string>
 			<key>label</key>
 			<string>Hide Pill</string>
 			<key>PostNotification</key>
@@ -288,7 +288,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>sbicons_hide</string>
+			<string>sbicons</string>
 			<key>label</key>
 			<string>Hide Icons (e.g VPN/Location)</string>
 			<key>PostNotification</key>
@@ -308,7 +308,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>hsbackdrop_hide</string>
+			<string>hsbackdrop</string>
 			<key>label</key>
 			<string>Hide Home Screen Backdrop</string>
 			<key>PostNotification</key>
@@ -322,7 +322,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>applabels_hide</string>
+			<string>applabels</string>
 			<key>label</key>
 			<string>Hide App Labels</string>
 			<key>PostNotification</key>
@@ -336,7 +336,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>pagedots_hide</string>
+			<string>pagedots</string>
 			<key>label</key>
 			<string>Hide Page Dots</string>
 			<key>PostNotification</key>
@@ -350,7 +350,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>updatedots_hide</string>
+			<string>updatedots</string>
 			<key>label</key>
 			<string>Hide Update Dots</string>
 			<key>PostNotification</key>
@@ -364,7 +364,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>betadots_hide</string>
+			<string>betadots</string>
 			<key>label</key>
 			<string>Hide Beta Dots</string>
 			<key>PostNotification</key>
@@ -378,7 +378,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>offloadedicon_hide</string>
+			<string>offloadedicon</string>
 			<key>label</key>
 			<string>Hide Offloaded Icon</string>
 			<key>PostNotification</key>
@@ -392,7 +392,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>dock_hide</string>
+			<string>dock</string>
 			<key>label</key>
 			<string>Hide Dock</string>
 			<key>PostNotification</key>
@@ -420,7 +420,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>dockbackground_hide</string>
+			<string>dockbackground</string>
 			<key>label</key>
 			<string>Hide Dock Background</string>
 			<key>PostNotification</key>
@@ -434,7 +434,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>iconbadge_hide</string>
+			<string>iconbadge</string>
 			<key>label</key>
 			<string>Hide Icon Badge</string>
 			<key>PostNotification</key>
@@ -448,7 +448,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>xdeletebutton_hide</string>
+			<string>xdeletebutton</string>
 			<key>label</key>
 			<string>Hide x Button</string>
 			<key>PostNotification</key>
@@ -462,7 +462,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>editingdonebutton_hide</string>
+			<string>editingdonebutton</string>
 			<key>label</key>
 			<string>Hide Editing Done Button</string>
 			<key>PostNotification</key>
@@ -476,7 +476,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>widgetfooter_hide</string>
+			<string>widgetfooter</string>
 			<key>label</key>
 			<string>Hide Widget Footer</string>
 			<key>PostNotification</key>
@@ -490,7 +490,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>todayview_hide</string>
+			<string>todayview</string>
 			<key>label</key>
 			<string>Hide Today View</string>
 			<key>PostNotification</key>
@@ -510,7 +510,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>padlock_hide</string>
+			<string>padlock</string>
 			<key>label</key>
 			<string>Hide LS Padlock</string>
 			<key>PostNotification</key>
@@ -524,7 +524,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>nofaceidglyph_hide</string>
+			<string>nofaceidglyph</string>
 			<key>label</key>
 			<string>Hide Face ID Glyph</string>
 			<key>PostNotification</key>
@@ -538,7 +538,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>dnd_hide</string>
+			<string>dnd</string>
 			<key>label</key>
 			<string>Hide Do Not Disturb Banner</string>
 			<key>PostNotification</key>
@@ -552,7 +552,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>ccbar_hide</string>
+			<string>ccbar</string>
 			<key>label</key>
 			<string>Hide CC Bar</string>
 			<key>PostNotification</key>
@@ -566,7 +566,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>swipetext_hide</string>
+			<string>swipetext</string>
 			<key>label</key>
 			<string>Hide Swipe Text</string>
 			<key>PostNotification</key>
@@ -580,7 +580,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>quickactiontoggles_hide</string>
+			<string>quickactiontoggles</string>
 			<key>label</key>
 			<string>Hide Quick Action Toggles</string>
 			<key>PostNotification</key>
@@ -594,7 +594,35 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>notificationcentertext_hide</string>
+			<string>cameraquickactiontoggles</string>
+			<key>label</key>
+			<string>Hide Camera Quick Action Toggle</string>
+			<key>PostNotification</key>
+			<string>com.iamparsa.noclutterprefs/settingschanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.iamparsa.noclutterprefs</string>
+			<key>key</key>
+			<string>torchquickactiontoggles</string>
+			<key>label</key>
+			<string>Hide Torch Quick Action Toggle</string>
+			<key>PostNotification</key>
+			<string>com.iamparsa.noclutterprefs/settingschanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.iamparsa.noclutterprefs</string>
+			<key>key</key>
+			<string>notificationcentertext</string>
 			<key>label</key>
 			<string>Hide "Notification Center" Text</string>
 			<key>PostNotification</key>
@@ -608,7 +636,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>nooldernotifications_hide</string>
+			<string>nooldernotifications</string>
 			<key>label</key>
 			<string>Hide "No Older Notifications" Text</string>
 			<key>PostNotification</key>
@@ -628,7 +656,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>safariclosetabbutton_hide</string>
+			<string>safariclosetabbutton</string>
 			<key>label</key>
 			<string>Hide Close Tab Button</string>
 			<key>PostNotification</key>
@@ -642,7 +670,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>safarisearchbg_hide</string>
+			<string>safarisearchbg</string>
 			<key>label</key>
 			<string>Hide Search Background Color</string>
 			<key>PostNotification</key>
@@ -656,7 +684,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>safarifavicon_hide</string>
+			<string>safarifavicon</string>
 			<key>label</key>
 			<string>Hide Favicon</string>
 			<key>PostNotification</key>
@@ -676,7 +704,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>foldertitle_hide</string>
+			<string>foldertitle</string>
 			<key>label</key>
 			<string>Hide Folder Title</string>
 			<key>PostNotification</key>
@@ -690,7 +718,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>folderbackground_hide</string>
+			<string>folderbackground</string>
 			<key>label</key>
 			<string>Hide Folder Background</string>
 			<key>PostNotification</key>
@@ -704,7 +732,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>folderblur_hide</string>
+			<string>folderblur</string>
 			<key>label</key>
 			<string>Hide Folder Blur</string>
 			<key>PostNotification</key>
@@ -724,7 +752,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>appswitcherheader_hide</string>
+			<string>appswitcherheader</string>
 			<key>label</key>
 			<string>Hide Header (Icon and Label)</string>
 			<key>PostNotification</key>
@@ -738,7 +766,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>appswitchericons_hide</string>
+			<string>appswitchericons</string>
 			<key>label</key>
 			<string>Hide Icons</string>
 			<key>PostNotification</key>
@@ -758,7 +786,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>twitterads_hide</string>
+			<string>twitterads</string>
 			<key>label</key>
 			<string>Hide Twitter Ads</string>
 			<key>PostNotification</key>
@@ -772,7 +800,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>redditads_hide</string>
+			<string>redditads</string>
 			<key>label</key>
 			<string>Hide Reddit Ads</string>
 			<key>PostNotification</key>
@@ -792,7 +820,7 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>settingsarrow_hide</string>
+			<string>settingsarrow</string>
 			<key>label</key>
 			<string>Hide Settings Arrow</string>
 			<key>PostNotification</key>
@@ -812,9 +840,93 @@
 			<key>defaults</key>
 			<string>com.iamparsa.noclutterprefs</string>
 			<key>key</key>
-			<string>sbcellulartext_hide</string>
+			<string>sbcellulartext</string>
 			<key>label</key>
 			<string>Hide Cellular Text (Eg. AT&amp;T)</string>
+			<key>PostNotification</key>
+			<string>com.iamparsa.noclutterprefs/settingschanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.iamparsa.noclutterprefs</string>
+			<key>key</key>
+			<string>shuttersound</string>
+			<key>label</key>
+			<string>Disable Shutter Sound</string>
+			<key>PostNotification</key>
+			<string>com.iamparsa.noclutterprefs/settingschanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.iamparsa.noclutterprefs</string>
+			<key>key</key>
+			<string>videoshuttersound</string>
+			<key>label</key>
+			<string>Disable Video Shutter Sound</string>
+			<key>PostNotification</key>
+			<string>com.iamparsa.noclutterprefs/settingschanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.iamparsa.noclutterprefs</string>
+			<key>key</key>
+			<string>endvideoshuttersound</string>
+			<key>label</key>
+			<string>Disable End Video Shutter Sound</string>
+			<key>PostNotification</key>
+			<string>com.iamparsa.noclutterprefs/settingschanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.iamparsa.noclutterprefs</string>
+			<key>key</key>
+			<string>NoKeyPressSound</string>
+			<key>label</key>
+			<string>Disable Typing Sound</string>
+			<key>PostNotification</key>
+			<string>com.iamparsa.noclutterprefs/settingschanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.iamparsa.noclutterprefs</string>
+			<key>key</key>
+			<string>endlocksound</string>
+			<key>label</key>
+			<string>Disable Lock Sound</string>
+			<key>PostNotification</key>
+			<string>com.iamparsa.noclutterprefs/settingschanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.iamparsa.noclutterprefs</string>
+			<key>key</key>
+			<string>chargesound</string>
+			<key>label</key>
+			<string>Disable Charge Sound</string>
 			<key>PostNotification</key>
 			<string>com.iamparsa.noclutterprefs/settingschanged</string>
 		</dict>

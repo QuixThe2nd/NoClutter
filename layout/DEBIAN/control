@@ -1,0 +1,10 @@
+Package: com.iamparsa.noclutter
+Name: NoClutter
+Depends: mobilesubstrate, preferenceloader, ws.hbang.common
+Conflicts: com.udevs.nobreadcrum13, com.cydiageek.byebreadcrumbs, com.yourepo.cydiageek.byehomebottombarx, com.cydiageek.byehomebottombarx, com.twickd.mtac.scrollbarbegone, com.spark.noccbar, com.tommo.hideapplabels, com.dantesieg.hidelabels, com.spark.hidebarx, com.cydiageek.hidedonebuttonx, tk.1di4r.hidedots11, com.ryannair05.hidelabels13, com.zunda.hidenctext, com.dgh0st.hidesbtime, com.yourepo.cydiageek.hidesbtime, com.adrenaline.nodockbg, com.yourepo.cydiageek.nodockground, com.harrywantstodev.nolspadlock, com.mrgcgamer.nodndbanner, com.twickd.mtac.flaturl, com.mtac.flaturl, com.twickd.mtac.nosettingschevrons
+Version: 1.6
+Architecture: iphoneos-arm
+Description: Hide elements that clutter iOS
+Maintainer: Quix <3parsa3@gmail.com>
+Author: Quix <3parsa3@gmail.com>
+Section: Tweaks

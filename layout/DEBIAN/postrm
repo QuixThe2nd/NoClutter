@@ -1,0 +1,35 @@
+#!/bin/bash
+
+if test -f "/System/Library/Audio/UISounds/photoShutter.caf.bkp"; then
+    mv /System/Library/Audio/UISounds/photoShutter.caf.bkp /System/Library/Audio/UISounds/photoShutter.caf
+fi
+if test -f "/System/Library/Audio/UISounds/begin_record.caf.bkp"; then
+    mv /System/Library/Audio/UISounds/begin_record.caf.bkp /System/Library/Audio/UISounds/begin_record.caf
+fi
+if test -f "/System/Library/Audio/UISounds/connect_power.caf.bkp"; then
+    mv /System/Library/Audio/UISounds/connect_power.caf.bkp /System/Library/Audio/UISounds/connect_power.caf
+fi
+if test -f "/System/Library/Audio/UISounds/end_record.caf.bkp"; then
+    mv /System/Library/Audio/UISounds/end_record.caf.bkp /System/Library/Audio/UISounds/end_record.caf
+fi
+if test -f "/System/Library/Audio/UISounds/key_press_click.caf.bkp"; then
+    mv /System/Library/Audio/UISounds/key_press_click.caf.bkp /System/Library/Audio/UISounds/key_press_click.caf
+fi
+if test -f "/System/Library/Audio/UISounds/key_press_delete.caf.bkp"; then
+    mv /System/Library/Audio/UISounds/key_press_delete.caf.bkp /System/Library/Audio/UISounds/key_press_delete.caf
+fi
+if test -f "/System/Library/Audio/UISounds/key_press_modifier.caf.bkp"; then
+    mv /System/Library/Audio/UISounds/key_press_modifier.caf.bkp /System/Library/Audio/UISounds/key_press_modifier.caf
+fi
+if test -f "/System/Library/Audio/UISounds/keyboard_press_clear.caf.bkp"; then
+    mv /System/Library/Audio/UISounds/keyboard_press_clear.caf.bkp /System/Library/Audio/UISounds/keyboard_press_clear.caf
+fi
+if test -f "/System/Library/Audio/UISounds/keyboard_press_delete.caf.bkp"; then
+    mv /System/Library/Audio/UISounds/keyboard_press_delete.caf.bkp /System/Library/Audio/UISounds/keyboard_press_delete.caf
+fi
+if test -f "/System/Library/Audio/UISounds/keyboard_press_normal.caf.bkp"; then
+    mv /System/Library/Audio/UISounds/keyboard_press_normal.caf.bkp /System/Library/Audio/UISounds/keyboard_press_normal.caf
+fi
+if test -f "/System/Library/Audio/UISounds/lock.caf.bkp"; then
+    mv /System/Library/Audio/UISounds/lock.caf.bkp /System/Library/Audio/UISounds/lock.caf
+fi
