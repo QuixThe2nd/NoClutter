@@ -82,6 +82,10 @@
 @property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
 @end
 
+@interface _UIInterfaceActionBlankSeparatorView
+@property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
+@end
+
 @interface SBFluidSwitcherItemContainerHeaderView
 @property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
 @end
@@ -173,7 +177,7 @@
 @interface SBIconListPageControl
 @end
 
-@interface SBMutableIconLabelImageParameters
+@interface SBIconView : UIView
 @end
 
 @interface TFNItemsDataViewController : NSObject
