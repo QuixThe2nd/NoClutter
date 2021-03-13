@@ -45,7 +45,7 @@ NSString *carrierName;
 	}
 
 	if (dockbackground) {
-		UIView *bgView = MSHookIvar<UIView *>(self, "_backgroundView"); 
+		UIView *bgView = MSHookIvar<UIView *>(self, "_backgroundView");
 		bgView.alpha = 0;
 		bgView.hidden = YES;
 	}
@@ -329,6 +329,13 @@ NSString *carrierName;
 		self.hidden = YES;
 }
 %end
+%hook _UIInterfaceActionBlankSeparatorView
+- (void)layoutSubviews{
+	%orig;
+	if(separator)
+		self.hidden = YES;
+}
+%end
 
 // NoWidgetFooter
 %hook WGWidgetListFooterView
@@ -428,12 +435,12 @@ NSString *carrierName;
 }
 %end
 
-// NoAppLabels
-%hook SBMutableIconLabelImageParameters
--(void)setTextColor:(id)arg1{
+// NoAppLabels (inspired from anynon/HideLabels13)
+%hook SBIconView
+- (void)setLabelHidden:(BOOL)arg1 {
 	%orig;
 	if(applabels)
-		%orig([UIColor clearColor]);
+		%orig(YES);
 }
 %end
 
@@ -483,7 +490,7 @@ NSString *carrierName;
 - (id)tableViewCellForItem:(id)arg1 atIndexPath:(id)arg2{
 	UITableViewCell *tbvCell = %orig;
 	id item = [self itemAtIndexPath: arg2];
-	return tbvCell;  
+	return tbvCell;
 	if([item respondsToSelector: @selector(isPromoted)] && [item performSelector:@selector(isPromoted)] && twitterads)
 		[tbvCell setHidden: YES];
 }
@@ -499,7 +506,7 @@ NSString *carrierName;
 // NoRedditAds
 %hook Post
 - (bool)isHidden{
-	return %orig;  
+	return %orig;
 	if([NSStringFromClass([self classForCoder]) isEqual:@"AdPost"] && redditads) {
 		return YES;
 	}
