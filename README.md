@@ -6,3 +6,6 @@ This is my first and only tweak. I don't recommend learning tweak development fr
 
 # Unreleased Changes
 - Bug fixes
+
+# Wanted Features
+- Agents support
